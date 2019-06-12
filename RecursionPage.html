@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Joshua Rovner's Portfolio - Recursion</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display" rel="stylesheet">
+</head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel = "shortcut icon" type = "image/png" href = TopSidebarPic.PNG>
+<body>
+<!--Side navigation-->
+    <div class="sidenav">
+        <center><a href = https://github.com/joshrovner/ICS4U0><img border="2" src="TopSidebarPic.PNG" width="70" height="70"></a></center>
+        <a href = "index.html">Home</a>
+        <a href = "AboutPage.html">About</a>
+        <a href = "PastProjects.html">Past Projects</a>
+        <a href ="OOPpage.html">OOP</a>
+		<a href = "ArraysPage.html">Arrays and ArrayLists</a>
+		<a href = "SortsPage.html">Sorts and Searches</a>
+		<a href = "RecursionPage.html">Recursion</a>
+        <a href = "FutureProjects.html">Future Projects</a>
+        <a href = "ContactMe.html">Contact</a>
+        <a href = "Bibliography.html">Bibliography</a>
+    </div>
+    <div class = "redText"><font size = 6 face = "Playfair Display"><center>Recursion</center></font></div>
+    <p>
+        <font face = "Open Sans"><center><div class = "redText"><font size =+1>
+                In this unit, I learn the fundamentals of recursion and solve problems of varying difficulties using recursive methods.</font></div></center></p></font>
+   <div class = "redText">
+                <OL><font size=+1>
+                <LI class = "blueText"> Assignment #1 - a compilation of problems that require a recursive solution with a limit on the number of lines used. <a class = "redText" href = "RecursionAssignment.html"> Go to Assignment 1 </a></LI>
+                <p></p><center><object width="600" height="400" data="Recursion Tutorial.pdf"></object></center>
+                </font>
+            </OL>
+       <font size = +2><center><u>Tutorial Continued - Solving a Problem Using Recursion</u></center></font>
+       <font size = +1><p><center>Let's try to solve a problem using recursion: Using one recursive method, given an integer <i>n</i>, find the facorial of <i>n</i>. No for-loops or built-in methods may be used.</center></p><center>
+       First off, we need to figure out how  this can be solved recursively. We know with a factorial, each number is multiplied by one less than itself, until 1 is reached, at which point we stop. Thus, when <i>n</i> equals 1, we've reached the base case.
+       Assuming we name the method "factorial", the code so far would look like this:</center>
+       <br><!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">int</span> <span style="color: #0000FF">factorial</span> <span style="color: #666666">(</span><span style="color: #B00040">int</span> n<span style="color: #666666">)</span> 
+<span style="color: #666666">{</span>
+  <span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span>n <span style="color: #666666">==</span> <span style="color: #666666">1)</span>
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">1;</span>
+<span style="color: #666666">}</span>
+</pre></td></tr></table></div>
+
+       <p></p>Otherwise, we need to multiply <i>n</i> by <i>n</i> - 1. The final code including this addition would look like this:
+           <br><br><!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5
+6
+7</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">int</span> <span style="color: #0000FF">factorial</span> <span style="color: #666666">(</span><span style="color: #B00040">int</span> n<span style="color: #666666">)</span> 
+<span style="color: #666666">{</span>
+  <span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span>n <span style="color: #666666">==</span> <span style="color: #666666">1)</span>
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">1;</span>
+  <span style="color: #008000; font-weight: bold">else</span>
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #0000FF">factorial</span> <span style="color: #666666">(</span>n <span style="color: #666666">-</span> <span style="color: #666666">1);</span>
+<span style="color: #666666">}</span>
+</pre></td></tr></table></div>
+
+        <br>Just like this, we can make short, efficient solutions to seemingly complex problems with the power of recursion.
+        </font>
+       <br><br><center><b><u>Recursion Tips</u></b></center>
+            <br><center>Provide a base case to stop infinite recursion.
+            <br><center>Trace a method before coding it to understand what it should do.
+            <br>Alter any necessary paramters with each call to reach the base case.
+                </center></center>
+    </div>
+    <br><div class = "black-box"></div>
+</html>

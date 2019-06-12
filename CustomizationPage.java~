@@ -1,0 +1,214 @@
+import javafx.application.Application;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.Group;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.FontPosture;
+import javafx.scene.image.Image;
+import javafx.animation.AnimationTimer;
+import javafx.event.EventHandler;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
+import javafx.scene.image.ImageView;
+import javafx.scene.control.Button;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+
+/**
+ * This class creates the functionality of the customization page. It adds the home button as part of a layout and 
+ * checks for clicks on the colour buttons, or keyboard input for the user name. 
+ * 
+ * <p>
+ * <b>Global Variables: </b>
+ * <p>
+ * <b>timer </b>This variable stores an instance of the AnimationTimer class, which
+ * allows for the stage to be continuously updated with graphics.
+ * <p>
+ * <b>rect1 </b>This variable holds an instance of the Rectangle class to draw the play button.
+ * <p>
+ * <b>rect2 </b>This variable holds an instance of the Rectangle class to draw the instructions button.
+ * <p>
+ * <b>rect3 </b>This variable holds an instance of the Rectangle class to draw the high scores button.
+ * <p>
+ * <b>rect4 </b>This variable holds an instance of the Rectangle class to draw the exit button.
+ * <p>
+ * <b>playFromStart </b>This variable holds an instance of the Rectangle class to draw the level select button.
+ * <p>
+ * <b>skipTutorial </b>This variable holds an instance of the Rectangle class to draw the skip tutorial button.
+ * <p>
+ * <b>tri1 </b>This variable holds an instance of the Triangle class to draw the right-facing triangle of the level select button.
+ * <p>
+ * <b>tri2 </b>This variable holds an instance of the Triangle class to draw the left-facing triangle of the level select button.
+ * 
+ * @author Joshua Rovner and Eric Myzelev
+ * @version 4 03.06.2019
+ */
+public class CustomizationPage
+{
+  public static AnimationTimer timer;
+  public static Rectangle rect1;
+  public static Rectangle rect2;
+  public static Rectangle rect3;
+  public static Rectangle rect4;
+  public static Rectangle rect5;
+  public static Rectangle playFromStart;
+  public static Rectangle skipTutorial;
+  public static Triangle tri1;
+  public static Triangle tri2;
+  
+  /**
+   * This method sets up the canvas, adding the home button and giving it the functionality to go back to the main menu
+   * when clicked. In addition, it checks for mouse clicks or key presses for the rocket colour and user name respectively.
+   * 
+   * 
+   * <p>
+   * <b>Local Variables: </b>
+   * <p>
+   * <b>canvas </b>This variable stores an instance of the Canvas class, which allows graphics to be drawn.
+   * <p>
+   * <b>home </b>This variable stores an image of the home picture.
+   * <p>
+   * <b>layout </b>This variable stores the layout in which the home button is embedded.
+   * <p>
+   * <b>timer </b>This variable stores an instance of the CustomizationGraphics class, which provides all the graphics of the page.
+   * 
+   * 
+   * @param stage the window on which the game is being played
+   */
+  public static void customization (Stage stage)
+  {   
+    //setting up canvas
+    Canvas canvas = new Canvas (700, 500);
+    
+    //importing images
+    Image home = new Image ("images/Home.png");
+    
+    //adding home button
+    VBox layout = new VBox ();
+    ImageView home1 = new ImageView (home);
+    Button btn = new Button ("", home1);
+    layout.setPadding(new Insets(20, 20, 20, 590));
+    layout.setAlignment(Pos.CENTER);
+    btn.setOnMouseClicked(e -> {
+      MainMenu.numTimesPlayed += 1;
+      MainMenu.mainMenu (stage);
+    });
+    layout.getChildren().add(btn);    
+    
+    //creating 5 rectangles and an instance of the CustomizationGraphics class
+    rect1 = new Rectangle (100, 135, 30, 30);
+    rect2 = new Rectangle (140, 135, 30, 30);
+    rect3 = new Rectangle (180, 135, 30, 30);
+    rect4 = new Rectangle (120, 175, 30, 30);
+    rect5 = new Rectangle (160, 175, 30, 30);
+    playFromStart = new Rectangle (100, 375, 220, 70);
+    skipTutorial = new Rectangle (400, 375, 220, 70);
+    CustomizationGraphics timer = new CustomizationGraphics (true, false, false, false, false);
+    
+    timer.start ();
+    
+    //checks for mouse click on any of the colour boxes
+    MainMenu.scene.setOnMouseClicked
+      (
+       new EventHandler<MouseEvent>()
+         {
+      public void handle(MouseEvent e)
+      {
+        //Red Color
+        if (rect1.containsPoint (e.getX (), e.getY ()))
+          timer.setFirstColour (true);
+        //Green Color
+        else if (rect2.containsPoint (e.getX (), e.getY ()))
+          timer.setSecondColour (true);
+        //Blue Color
+        else if (rect3.containsPoint (e.getX (), e.getY ()))
+          timer.setThirdColour (true);
+        //Yellow Color
+        else if (rect4.containsPoint (e.getX (), e.getY ()))
+          timer.setFourthColour (true);
+        //Gray Color
+        else if (rect5.containsPoint (e.getX (), e.getY ()))
+          timer.setFifthColour (true);
+        //start button
+        else if (playFromStart.containsPoint (e.getX (), e.getY ()))
+        {
+          timer.stop();
+          layout.getChildren().clear ();
+          GameInput.play (stage, 1);
+        }
+        //skip tutorial button
+        else if (skipTutorial.containsPoint(e.getX(), e.getY()))
+        {
+          timer.stop();
+          layout.getChildren().clear ();
+          GameInput.play (stage, 2);
+        }
+      }
+    }
+    );
+    
+    //checking for mouse hover
+    MainMenu.scene.setOnMouseMoved
+      (
+       new EventHandler<MouseEvent>()
+         {
+      public void handle(MouseEvent e)
+      {
+        //Play Button
+        if (playFromStart.containsPoint (e.getX (), e.getY ()))
+          timer.setPlayFromStartHover(true);
+        else
+          timer.setPlayFromStartHover(false);
+        if (skipTutorial.containsPoint(e.getX(), e.getY()))
+          timer.setSkipTutorialHover(true);
+        else
+          timer.setSkipTutorialHover(false);
+      }
+    }
+    );
+    
+    //checks for keyboard input for the user name
+    MainMenu.scene.setOnKeyPressed
+      (
+       new EventHandler<KeyEvent>() 
+         {
+      public void handle(KeyEvent e)
+      {
+        String key = e.getCode().toString();
+        //checks for backspace
+        if (timer.userName.length () > 0)
+        {
+          if (key.equals ("BACK_SPACE"))
+            timer.userName = timer.userName.substring (0, timer.userName.length () - 1);
+        }
+        //checks for number input
+        if (key.length () >= 6 && key.substring (0, 5).equals ("DIGIT"))
+          timer.userName += key.charAt (key.length () - 1);
+        //checks for minus as space
+        if (key.equals ("SPACE"))
+          timer.userName += " ";
+        //checks for user name length - limit is 40 characters
+        if (key.length () == 1 && timer.userName.length () <= 40)
+          timer.userName += key;
+      }
+    }
+    );
+    MainMenu.root.getChildren().addAll (canvas, layout);
+  }
+  
+  /*
+   * This method draws the default outline of the red colour box for when the user enters the customization page.
+   */
+  public void drawOutline ()
+  {
+    Main.gc.setStroke (Color.YELLOW);
+    Main.gc.strokeRect (100, 100, 20, 20);
+  }
+}
+

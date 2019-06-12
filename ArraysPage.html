@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Joshua Rovner's Portfolio - Arrays and Arraylists</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display" rel="stylesheet">
+</head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel = "shortcut icon" type = "image/png" href = TopSidebarPic.PNG>
+<body>
+<!--Side navigation-->
+    <div class="sidenav">
+        <center><a href = https://github.com/joshrovner/ICS4U0><img border="2" src="TopSidebarPic.PNG" width="70" height="70"></a></center>
+        <a href = "index.html">Home</a>
+        <a href = "AboutPage.html">About</a>
+        <a href = "PastProjects.html">Past Projects</a>
+        <a href ="OOPpage.html">OOP</a>
+		<a href = "ArraysPage.html">Arrays and ArrayLists</a>
+		<a href = "SortsPage.html">Sorts and Searches</a>
+		<a href = "RecursionPage.html">Recursion</a>
+        <a href = "FutureProjects.html">Future Projects</a>
+        <a href = "ContactMe.html">Contact</a>
+        <a href = "Bibliography.html">Bibliography</a>
+    </div>
+    <div class = "redText"><font size = 6><center>Arrays and ArrayLists</center></font></div>
+    <!--<b class="seqsearch">-->
+    <font face = "Open Sans"><p>
+        <center><div class = "redText"><font size =+2>
+                In this unit, I demonstrate advanced use of arrays as well as arraylists for efficient algorithms.</font></div></center></p></font>
+   <div class = "redText">
+                <OL><font size=+1>
+                <LI class = "blueText"> Assignment #1 - a problem requiring file input and data sorting based on multiple criteria. <a class = "redText" a href = "ArraysAssignment.html"> Go to Assignment 1 </a></LI>
+                <p></p><center><object width="600" height="400" data="Arrays Tutorial.pdf"></object></center>
+                </font>
+            </OL>
+       <u><center><font size = +2>Tutorial Continued - Understanding Arrays and ArrayLists With Examples</font></center></u>
+       <br><font size = +1>In this part of the tutorial, I will use several small examples to demonstrate typical code related to arrays and arraylists.
+            <br><br><!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4</pre></td><td><pre style="margin: 0; line-height: 125%">String<span style="color: #333333">[]</span> stringArray <span style="color: #333333">=</span> <span style="color: #333333">{</span><span style="background-color: #fff0f0">&quot;My&quot;</span><span style="color: #333333">,</span> <span style="background-color: #fff0f0">&quot;name&quot;</span><span style="color: #333333">,</span> <span style="background-color: #fff0f0">&quot;is&quot;</span><span style="color: #333333">,</span> <span style="background-color: #fff0f0">&quot;Josh&quot;</span><span style="color: #333333">};</span> 
+<span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i <span style="color: #333333">&lt;</span> stringArray<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">;</span> i<span style="color: #333333">++)</span>
+    stringArray<span style="color: #333333">[</span>i<span style="color: #333333">]</span> <span style="color: #333333">+=</span> <span style="background-color: #fff0f0">&quot;a&quot;</span><span style="color: #333333">;</span>
+String temp <span style="color: #333333">=</span> stringArray <span style="color: #333333">[</span><span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">];</span>
+</pre></td></tr></table></div>
+       
+       <br>In this code snippet, line 1 uses shorthand to create a new array with four unique String elements. Then, the second line adds the letter "a" to the end of each element using a for loop. Finally, the last line accesses the element at index 2 (the third element) and assigns it to the "temp" variable.
+       
+       <br><br><!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[]</span> intArray <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> <span style="color: #333399; font-weight: bold">int</span><span style="color: #333333">[</span><span style="color: #0000DD; font-weight: bold">4</span><span style="color: #333333">];</span>
+<span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i <span style="color: #333333">&lt;</span> intArray<span style="color: #333333">.</span><span style="color: #0000CC">length</span><span style="color: #333333">;</span> i<span style="color: #333333">++)</span>
+            intArray<span style="color: #333333">[</span>i<span style="color: #333333">]</span> <span style="color: #333333">=</span> i<span style="color: #333333">;</span>
+</pre></td></tr></table></div>
+    
+    <br>In example 2, we initialize an array of 4 integers. Since the values of each element are not specified, they are set to their default values - 0 for number-related types and null for Strings and objects. Then, we use another for loop, which sets the array at the current index of i to be i, so the element at index 0 is set to 0, the element at index 1 is set to 1, and so on.<br>Now, we will take a look at arraylists and how to use them efficiently.
+       
+    <br><br><!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3</pre></td><td><pre style="margin: 0; line-height: 125%">ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;</span> stringArrayList <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>String<span style="color: #333333">&gt;(</span>Arrays<span style="color: #333333">.</span><span style="color: #0000CC">asList</span> <span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Hello&quot;</span><span style="color: #333333">,</span> <span style="background-color: #fff0f0">&quot;there&quot;</span><span style="color: #333333">));</span>
+<span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span>String s <span style="color: #333333">:</span> stringArrayList<span style="color: #333333">)</span>
+    s <span style="color: #333333">+=</span> <span style="background-color: #fff0f0">&quot;z&quot;</span><span style="color: #333333">;</span>
+</pre></td></tr></table></div>
+    
+    <br>In this code, we create an ArrayList of type String and use the Arrays.asList method to insert two Strings. Then, the second line consists of a for-each loop which goes through the whole list and adds a "z" to each element. 
+    
+    <br><br><!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4</pre></td><td><pre style="margin: 0; line-height: 125%">ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;</span> intArrayList <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> ArrayList<span style="color: #333333">&lt;</span>Integer<span style="color: #333333">&gt;();</span>
+<span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">(</span><span style="color: #333399; font-weight: bold">int</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">;</span> i <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">4</span><span style="color: #333333">;</span> i<span style="color: #333333">++)</span>
+    intArrayList<span style="color: #333333">.</span><span style="color: #0000CC">add</span> <span style="color: #333333">(</span>i<span style="color: #333333">);</span>
+Integer i <span style="color: #333333">=</span> intArrayList<span style="color: #333333">.</span><span style="color: #0000CC">remove</span> <span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">);</span>
+</pre></td></tr></table></div>
+       <br>The first line in the example declares a new arraylist of type Integer. Remember that primitive data types cannot be used with arraylists. Then, we use a for loop from 0 to 4, adding a new element at the current position of i. Essentially, this just creates a list with the numbers 0 to 4 in that order. Now, since we are using an arraylist, shouldn't a for-each loop instead of a for loop be used? Yes, but in this case, there were no elements to begin with, and as we recall, for-each loops can only modfiy current elements; they cannot create anything new. <br>The last line assigns an Integer i equal to the result of the remove() arraylist method on the element at index 2. Looking back, the remove method removes the desired element from the list, shifts all the elements behind it to the fill in the empty slot, and returns the value being removed. Thus, this line alters the array to be:<font color = 0000FF> 0, 1, 3, 4</font>, and i to be 2, the value that was removed.
+    <br><br><center><b><u>Arrays and ArrayLists Tips</u></b></center>
+            <br><center>Do not mix up array syntax with arraylist methods.
+            <br><center>Do not try to access an element before index 0 or after thee last element in the list.
+            <br>As a rule, only use for-each loops when you want to alter <b>every</b> element in an arraylist.
+                </center></center>
+       </font></div>
+</body>
+    <br><div class = "black-box"></div>
+</html>

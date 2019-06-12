@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Joshua Rovner's Portfolio - Don't Fear the OOP</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display" rel="stylesheet">
+</head>
+    <link rel="stylesheet" type="text/css" href="styles2.css">
+    <link rel = "shortcut icon" type = "image/png" href = TopSidebarPic.PNG>
+<!--Side navigation-->
+    <div class="sidenav">
+        <center><a href = https://github.com/joshrovner/ICS4U0><img border="2" src="TopSidebarPic.PNG" width="70" height="70"></a></center>
+        <a href = "index.html">Home</a>
+        <a href = "AboutPage.html">About</a>
+        <a href = "PastProjects.html">Past Projects</a>
+        <a href ="OOPpage.html">OOP</a>
+		<a href = "ArraysPage.html">Arrays and ArrayLists</a>
+		<a href = "SortsPage.html">Sorts and Searches</a>
+		<a href = "RecursionPage.html">Recursion</a>
+        <a href = "FutureProjects.html">Future Projects</a>
+        <a href = "ContactMe.html">Contact</a>
+        <a href = "Bibliography.html">Bibliography</a>
+    </div>
+
+    <font face = "Open Sans"><font color = 000000>
+        <div class = "redText"><font size = 6><center>Don't Fear the OOP Assignment - Eric Myzelev  and Joshua Rovner</center></font></div>
+        <font size = 4><br><div class = "redText">Reflection: At first, I did not understand how to make an object of the class, but then I learned about driver classes (in this case the CoffeeDrinking class), which, in their main methods, create any necessary objects and execute functions. Overall, though, this assignment helped me understand the aspects of a proper program using OOP for the first time. I understood the basic structure of a program, with variables as attributes and methods as behaviours. Accessors and mutators became clear, as well as the concept of inheritance with subclasses.</div>
+<br><div class = "redText">Objective: Through the use of an original story, illustrate the principles of Object-Oriented Programming.</div>
+        <br><div class = "redText">Assignment Theme: Sitcoms</div>
+        
+        <br><font size =+1><table class="greenBorder"><tr><td>Every sitcom has a few key ingredients: sociable characters, antisocial characters, and a coffee shop where characters convene. A standard sitcom is made up of seasons 20 episodes long, with each one 25 minutes in length and plays in the evenings.</td></tr></table>
+        <div class = "greenText">This description provided the key ingredients of a sitcom and specified certain values related to the sitcom.</div>
+        
+        <table class="yellowBorder"><tr><td>Sitcom<div class="indent">has a certain number of sociable characters<br>has a certain number of antisocial characters<br>has a coffee shop where characters convene<br>has a certain number of episodes per season<br>has a certain episode length<br>has a time of airing</div>A typical sitcom has<div class="indent">number of episodes per season = 20<br>episode length = 25<br>time of airing = Evening</div></td></tr></table>
+        <div class="yellowText">This method of organizing information shows how a program declares variables in a class and constructs the class using more specific values.</div>
+        
+        <table class="redBorder"><tr><td>public class Sitcom<br>{<div class="indent">int sociableCharacters;<br>int antisocialCharacters;<br>int episodesPerSeason;<br>int episodeLength;<br>String coffeeShop;<br>String timeOfAiring:<br><br>public Sitcom()<br>{<div class = "indent">episodesPerSeason = 20;<br>episodeLength = 25;<br>timeOfAiring = “evening”;<br>coffeeShop = "Club Coffee";</div>}</div>}</td></tr></table>
+        <div class="redText">The code starts off by declaring the class Sitcom. Then a few variables are declared and there is a class constructor. The class constructor sets default values for some of the variables.</div>
+        
+        <table class="greenBorder"><tr><td>The Friends Drink Coffee<br>The sitcom is named after the city where the story takes place, Crossroads. Crossroads has two sociable characters and two antisocial characters. They go to a coffee shop called Club Coffee.</td></tr></table>
+        <div class="greenText">The text above has now specified the number of sociable characters, antisocial characters and the coffee shop.</div>
+        
+        <table class="yellowBorder"><tr><td>Main Coffee Drinking<div class="indent"><br>Sitcom crossroads is a new Sitcom<div class="indent">the number of sociable characters is 2.<br>the number of antisocial characters is 2.<br>the coffee shop is Club Coffee.</div></td></tr></table>
+        <div class="yellowText">An object is created of type Sitcom and then all the information that was missing in the Sitcom class is filled out.</div>
+        
+        <table class="redBorder"><tr><td>public class CoffeeDrinking<br>{<div class="indent">public static void main (String arguments [])<br>{<div class = "indent">Sitcom crossroads = new Sitcom ();<br>crossroads.sociableCharacters = 2;<br>crossroads.antisocialCharacters = 2;<br>crossroads.coffeeShop = “Club Coffee”;</div>}</div>}</td></tr></table>
+        <div class="redText">The first line is a declaration of a new class called CoffeeDrinking. Then, a new instance of Sitcom is instantiated. Finally, a reference variable called crossroads is used to set specific values for the remaining variables declared in the Sitcom class.</div>
+        
+        <table class="greenBorder"><tr><td>All shops start out with one location, no customers, and one owner. Every store has a name, a few employees, an address, and a certain investment is required to cover start up costs.</td></tr></table>
+        <div class="greenText">This description shows the typical elements of a shop, as well as the standard starting points for some of those elements numerically.</div>
+        
+        <table class="yellowBorder"><tr><td>Shops<div class="indent">have a certain number of locations<br>have a certain number of customers<br>have a certain number of owners or shareholders<br>have a name<br>has a certain episode length<br>have an adress<br>have a certain number of employees<br>have a start-up investment</div><br>A standard shop would start with<div class="indent">one location<br>zero customers<br>one owner</div><br>When asked for the location of the store<div class="indent">give them an address</div></td></tr></table>
+        <div class="yellowText">An object is created of type Shops and all the information about a typical shop is filled out. When asked for the store’s location, it will be provided through a method.</div>
+        
+        <table class="redBorder"><tr><td>public class Shops<br>{<div class="indent">int numLocations;<br>int numCustomers;<br>int numShareholders;<br>String name;<br>String address;<br>int numEmployees;<br>double startUpInvestment;<br><br>public Shops<br>{<div class = "indent">numLocations = 1;<br>numCustomers = 0;<br> numShareholders = 1;</div>}<br><br>public String whatIsYourAddress ()<br>{<div class="indent">return address;</div>}</div>}</td></tr></table>
+        <div class="redText">The first line is a declaration of a new class called Shops. A few variables are declared inside the class which determine the specifics of the shop, such as the number of shareholders it has or the store’s name. Three of the variables are given values in the class constructor to be used in the program. Finally, the store’s address is given to the user when they ask for it.</div>
+        
+        <table class="greenBorder"><tr><td>Coffee shops are based on the idea of shops. They are identical, except that they have some additional qualities, namely they have coffee makers, a few small tables, a certain “coffee shop” environment, and serve some pastries to go along with the coffee. Your standard coffee shop will be quiet, will close sometime between the afternoon and evening, and will have some amount of coffee beans ready to use.</td></tr></table>
+        <div class="greenText">This description shows the specific elements which differentiate a coffee shop from a regular shop, as well as some of their typical attributes.</div>
+        
+        <table class="yellowBorder"><tr><td>Coffee Shops extends the idea of Shops<div class="indent"><br>A Coffee Shop<div class="indent">has made a certain number of coffees<br>has a certain number of coffee makers<br>has a few small tables<br> has a “coffee shop” environment<br>has pastries to go with the coffee</div><br>For a given Coffee Shop<div class="indent">It will be quiet<br>It will close in the hours between afternoon and evening<br>It will have coffee beans ready to use</div></div></td></tr></table>
+        <div class="yellowText">Here, the information from the previous part is organized into a more succinct format, with the elements of coffee shops in general and then the typical things one would find when they walk into one.</div>
+        
+        <table class="redBorder"><tr><td>public class CoffeeShops extends Shops<br>{<div class="indent"> int coffeesMadeToday;<br>int coffeeMakers;<br>int numTables;<br>String environment;<br>String pastry;<br>int shopVolume;<br>String timeOfClosure;<br>int amountCoffeeBeans;<br>Shops address;<br><br>public Shops<br>{<div class = "indent">volume = 1;<br>timeOfClosure = 4:00 pm;<br>amountCoffeeBeans = 500;</div>}</div>}</td></tr></table>
+        <div class="redText">The first line is a declaration of a new class called CoffeeShops which is an extension of the Shops class. A few variables are declared inside the class which determine the specifics of the coffee shop. Three of the variables are given values in the class constructor to be used in the program.</div>
+        
+        <table class="greenBorder"><tr><td>Whenever a customer buys a drink, the number of coffee beans decreases by 2.</td></tr></table>
+        <div class="greenText">This specifies how the amount of coffee is affected by customer demand.</div>
+        
+        <table class="yellowBorder"><tr><td>customerBuysCoffee<div class="indent">amount of coffee beans decreases by 25</div></td></tr></table>
+        <div class="yellowText">This creates a pseudo-method where the amount of coffee beans decreases by 25 each time the customer buys a coffee.</div>
+        
+        <table class="redBorder"><tr><td>public void customerBuysCoffee ()<br>{<div class="indent">amountCoffeeBeans -= 25;</div>}</td></tr></table>
+        <div class="redText">This is the fully coded method, decreasing the number of beans by 25 each time it is called.</div>
+        
+        <table class="greenBorder"><tr><td>If someone asks the cashier how much coffee is left, they will always respond with the amount left.</td></tr></table>
+        <div class="greenText">This shows the effects of a customer inquiring about how much coffee left, which will be translated into a method which returns a value.</div>
+        
+        <table class="yellowBorder"><tr><td>howMuchCoffeeIsLeft<div class="indent">tell them how much coffee is left</div></td></tr></table>
+        <div class="yellowText">This creates a pseudo-method telling a customer how much coffee is left.</div>
+        
+        <table class="redBorder"><tr><td>public int howMuchCoffeeIsLeft ()<br>{<div class="indent">return amountCoffeeBeans;</div>}</td></tr></table>
+        <div class="redText">This is the fully coded method, returning the current value of amountCoffeeBeans.</div>
+        
+        <table class="greenBorder"><tr><td>If a customer calls asking for the coffee shop’s address, tell the customer the address by printing out “The address is (address).”</td></tr></table>
+        <div class="greenText">This allows for the address of the coffee shop to be specified later.</div>
+        
+        <table class="yellowBorder"><tr><td>tellCustomerAddress (address)<div class="indent">print "The address of the shop is (address).”</div></td></tr></table>
+        <div class="yellowText">This organizes the steps into a way easier to convert to code.</div>
+        
+        <table class="redBorder"><tr><td>public void tellCustomerAddress (Shops address)  ()<br>{<div class="indent">this.address = address;<br>System.out.println(“The address of the shop is " + address.whatIsYourAddress());</div>}</td></tr></table>
+        <div class="redText">This is the fully coded method, printing out the shop’s address.</div>
+        
+        <table class="greenBorder"><tr><td>Coffee shops are based on the idea of shops. They are identical, except that they have some additional qualities, namely, they have coffee makers, a few small tables, a certain “coffee shop” environment, and serve some pastries to go along with the coffee. Your standard coffee shop will be quiet, will close sometime between the afternoon and evening, and will have some amount of coffee beans ready to use.<br>Whenever a customer buys a drink, the number of coffee beans decreases by 25. If someone asks the cashier how much coffee is left, they will always respond with the amount left.<br> If a customer calls asking for the coffee shop’s address, tell the customer the address by printing out “The address is (address).”</td></tr></table>
+        <div class="greenText">This puts the last 4 steps into one, giving an overview of a coffee shop.</div>
+        
+        <table class="yellowBorder"><tr><td>Coffee Shops extends the idea of Shops<div class="indent"><br> A Coffee Shop<div class="indent">has made a certain number of coffees<br>has a certain number of coffee makers<br>has a few small tables<br>has a “coffee shop” environment<br>has pastries to go with the coffee</div><br>For a given Coffee Shop<div class="indent">It will be quiet<br>It will close in the hours between afternoon and evening<br> It will have coffee beans ready to use</div><br>customerBuysCoffee<div class="indent">amount of coffee beans decreases by 25</div><br>howMuchCoffeeIsLeft<div class="indent">tell them how much coffee is left</div><br>tellCustomerAddress (address)<div class="indent">print "The address of the shop is (address).”</div></div></td></tr></table>
+        <div class="yellowText">The information from the past 4 steps is organized into pseudocode.</div>
+        
+        <table class="redBorder"><tr><td>public class CoffeeShops extends Shops  ()<br>{<div class="indent">int coffeesMadeToday;<br>int coffeeMakers;<br>int numTables;<br>String environment;<br>String pastry;<br>String shopVolume;<br>String timeOfClosure;<br>int amountCoffeeBeans;<br>Shops address;<div><br></div>public Shops<br>{<br><div class="indent">volume = “quiet”;<br>timeOfClosure = 4:00 pm;<br>amountCoffeeBeans = 500;</div>}<div><br>public void customerBuysCoffee ()<br>{<br><div class="indent">amountCoffeeBeans -= 25;</div>}<div><br></div>public int howMuchCoffeeIsLeft ()<br>{<div class="indent">return amountCoffeeBeans;</div>}<div><br>public void tellCustomerAddress (Shops address)  ()<br>{<div class="indent">this.address = address;<br>System.out.println(“The address of the shop is " + address.whatIsYourAddress());</div>}</div></div></div>}</td></tr></table>
+        <div class="redText">Here, the three previous methods are placed into the CoffeeShops class. This class now tells the customer the amount of coffee beans remaining and prints the shop’s address.</div>
+        
+        <table class="greenBorder"><tr><td>Here is the plot of ICSitcom: There is a town called Crossroads, which has two sociable and two antisocial characters. These characters all convene at a coffee shop called Club Coffee. Club Coffee has made 15 coffees today, owns 2 coffee machines, has 7 small tables, has few distractions and a dull, buzzing atmosphere, and sells danishes as a side dish. In the story, a customer orders coffee, asks how much coffee is left and then asks what the address is.</td></tr></table>
+        <div class="greenText">This is the final plot with values given to all the variables.</div>
+        
+        <table class="yellowBorder"><tr><td>Here is the plot of ICSitcom:<div></div><br>There is a city called crossroads<div class="indent">crossroads has two sociable characters<br>crossroads has two antisocial characters</div><br>There is a new coffee shop named club coffee<div class="indent">club coffee has 15 coffees<br>club coffee has 2 coffee machines<br>club coffee has 7 tables<br>club coffee has a dull and buzzing atmosphere<br>club coffee sells danishes as a side dish<br>club coffee sells lattes and espressos<br>the volume is quiet<br>club coffee closes at 4<br>club coffee starts the day with 3000 coffee beans</div><br>customer buys a coffee<br>customer asks how much coffee is left<br>customer asks what the address is </td></tr></table>
+        <div class="yellowText">This is the organized psuedocode for the final story.</div>
+        
+        <table class="redBorder"><tr><td>public class ICSitcom<br>{<br><div class="indent">public static void main (String arguments[]) {<br><div class="indent">City crossroads = new City ();<div class="indent">crossroads.sociableCharacters = 2;<br>crossroads.antisocialCharacters = 2;</div><div><br>CoffeeShops clubCoffee = new CoffeeShops ();<br><div class="indent">clubCoffee.coffeesMadeToday = 15;<br>clubCoffee.coffeeMakers = 2;<br>clubCoffee.numTables = 7;<br>clubCoffee.environment = “dull and buzzing”;<br>clubCoffee.pastry = “danish”;</div><br>clubCoffee.customerBuysCoffee ();<br>clubCoffee.howMuchCoffeeIsLeft ();<br>clubCoffee.tellCustomerAddress ();</div></div>}</div>}</td></tr></table>
+	<div class="redText">This is the code for the final plot, with all variables having assigned values, objects being created of the city and coffee shop, and methods of the ClubCoffee object being called. </div>
+    </font>
+    <br><div class = "black-box"></div></font></font></font>
+</html>

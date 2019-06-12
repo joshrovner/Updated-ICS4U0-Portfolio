@@ -1,0 +1,119 @@
+font-family: 'Open Sans', sans-serif;
+
+center {
+    text-align: center;
+}
+
+.greenText {
+    color: green;
+}
+
+.blueText {
+    color: blue;
+    font-weight: bold;
+}
+
+.greenBorder {
+    border: solid;
+    color: green;
+}
+
+.yellowText {
+    color: c1a24b;
+}
+
+.yellowBorder {
+    border: solid;
+    color: c1a24b;
+}
+
+.redText {
+    color: red;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+.redBorder {
+    border: solid;
+    color: red;
+}
+
+.indent {
+    margin-left: 1.5em;
+}
+
+ html {
+        overflow-y : auto;
+    }
+    body {
+        font-family: 'Playfair Display', serif;
+        background: url(Background2.jpg) no-repeat center center fixed;
+        height: 100%;
+        overflow: hidden;
+        background-size: cover;
+        font-size: 2vw;
+    }
+
+    /* The sidebar menu */
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  font-family: 'Verdana';
+  padding: 4px 8px 6px 10px;
+  text-decoration: none;
+  font-size: 23px;
+  color: #818181;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Style page content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+body {
+        margin-left: 220px;
+        margin-right: 60px;
+        color: white;
+    }
+    p { 
+        font-size: 1.5vw;
+        line-height: 0pt;
+    }
+
+.black-box {
+	background: black;
+    height: 20px;
+    width: 100%;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 15px;
+}
+
+border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;

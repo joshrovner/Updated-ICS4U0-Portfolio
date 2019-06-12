@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Joshua Rovner's Portfolio - Sorts and Searches</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display" rel="stylesheet">
+</head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel = "shortcut icon" type = "image/png" href = TopSidebarPic.PNG>
+<body>
+<!--Side navigation-->
+    <div class="sidenav">
+        <center><a href = https://github.com/joshrovner/ICS4U0><img border="2" src="TopSidebarPic.PNG" width="70" height="70"></a></center>
+        <a href = "index.html">Home</a>
+        <a href = "AboutPage.html">About</a>
+        <a href = "PastProjects.html">Past Projects</a>
+        <a href ="OOPpage.html">OOP</a>
+		<a href = "ArraysPage.html">Arrays and ArrayLists</a>
+		<a href = "SortsPage.html">Sorts and Searches</a>
+		<a href = "RecursionPage.html">Recursion</a>
+        <a href = "FutureProjects.html">Future Projects</a>
+        <a href = "ContactMe.html">Contact</a>
+        <a href = "Bibliography.html">Bibliography</a>
+    </div>
+    <div class = "redText"><font size = 6 face = "Playfair Display"><center>Sorts and Searches</center></font></div>
+    <p>
+        <font face = "Open Sans"><center><div class = "redText"><font size =+2>
+                In this unit, I learn about a  variety of searching and sorting algorithms, from the theoretical explanation to the base code to optimal usage scenarios.</font></div></center></p></font>
+   <div class = "redText">
+                <OL><font size=+1>
+                <LI class = "blueText"> Assignment #1 - a Harvard CS50-style presentation on a chosen sort (insertion sort in my case). This link will show the base code, a visual code representation, and a short explanation document. <a class = "redText" href = "SortsAssignment.html"> Go to Assignment 1 </a></LI>
+                <p></p><center><object width="600" height="400" data="Sorts Tutorial.pdf"></object></center>
+                </font>
+            </OL>
+       <font size = +2><center><u>Tutorial Continued - Solving a Problem Using Searches and Sorts</u></center></font>
+       <font size = +1><p><center>Let's try to solve a problem: Given an integer array of length 2 - 10, use one method to sort the array from least to greatest. Then, return the first position of the integer "3" in the array. If there are no 3's, return -1.</center></p><center>
+       To solve this problem, we must first sort the array. Since it will have a maximum of only 10 elements, we know that insertion sort will be an effective algorithm. Thus, we can implement it:</center>
+     
+       <br><!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">int</span> <span style="color: #0000FF">findPos3</span> <span style="color: #666666">(</span><span style="color: #B00040">int</span><span style="color: #666666">[]</span> array<span style="color: #666666">)</span>
+<span style="color: #666666">{</span>
+  <span style="color: #008000; font-weight: bold">for</span> <span style="color: #666666">(</span><span style="color: #B00040">int</span> i <span style="color: #666666">=</span> <span style="color: #666666">1;</span> i <span style="color: #666666">&lt;</span> array<span style="color: #666666">.</span><span style="color: #7D9029">length</span><span style="color: #666666">;</span> i<span style="color: #666666">++)</span> 
+  <span style="color: #666666">{</span> 
+    <span style="color: #408080; font-style: italic">//sets key to current position</span>
+    <span style="color: #B00040">int</span> key <span style="color: #666666">=</span> arr<span style="color: #666666">[</span>i<span style="color: #666666">];</span> 
+    <span style="color: #B00040">int</span> j <span style="color: #666666">=</span> i <span style="color: #666666">-</span> <span style="color: #666666">1;</span> 
+    
+    <span style="color: #408080; font-style: italic">//loops backwards through the array until the correct spot for the key is found</span>
+    <span style="color: #008000; font-weight: bold">while</span> <span style="color: #666666">(</span>j <span style="color: #666666">&gt;=</span> <span style="color: #666666">0</span> <span style="color: #666666">&amp;&amp;</span> arr<span style="color: #666666">[</span>j<span style="color: #666666">]</span> <span style="color: #666666">&gt;</span> key<span style="color: #666666">)</span> 
+    <span style="color: #666666">{</span> 
+      arr<span style="color: #666666">[</span>j <span style="color: #666666">+</span> <span style="color: #666666">1]</span> <span style="color: #666666">=</span> arr<span style="color: #666666">[</span>j<span style="color: #666666">];</span> 
+      j <span style="color: #666666">=</span> j <span style="color: #666666">-</span> <span style="color: #666666">1;</span> 
+    <span style="color: #666666">}</span> 
+    
+    <span style="color: #408080; font-style: italic">//key is inserted in the correct position</span>
+    arr<span style="color: #666666">[</span>j <span style="color: #666666">+</span> <span style="color: #666666">1]</span> <span style="color: #666666">=</span> key<span style="color: #666666">;</span> 
+  <span style="color: #666666">}</span> 
+<span style="color: #666666">}</span>
+</pre></td></tr></table></div>
+
+
+
+       <p></p>Now, we want to find the position at which a 3 is located. To do this, we can use a simple sequential search which will go through every element in the array until a 3 is found or the end of the array has been reached. 
+           <br><br><!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">int</span> <span style="color: #0000FF">findPos3</span> <span style="color: #666666">(</span><span style="color: #B00040">int</span><span style="color: #666666">[]</span> array<span style="color: #666666">)</span>
+<span style="color: #666666">{</span>
+  <span style="color: #408080; font-style: italic">//insertion sort</span>
+  <span style="color: #008000; font-weight: bold">for</span> <span style="color: #666666">(</span><span style="color: #B00040">int</span> i <span style="color: #666666">=</span> <span style="color: #666666">1;</span> i <span style="color: #666666">&lt;</span> array<span style="color: #666666">.</span><span style="color: #7D9029">length</span><span style="color: #666666">;</span> i<span style="color: #666666">++)</span> 
+  <span style="color: #666666">{</span> 
+    <span style="color: #408080; font-style: italic">//sets key to current position</span>
+    <span style="color: #B00040">int</span> key <span style="color: #666666">=</span> arr<span style="color: #666666">[</span>i<span style="color: #666666">];</span> 
+    <span style="color: #B00040">int</span> j <span style="color: #666666">=</span> i <span style="color: #666666">-</span> <span style="color: #666666">1;</span> 
+    
+    <span style="color: #408080; font-style: italic">//loops backwards through the array until the correct spot is found</span>
+    <span style="color: #008000; font-weight: bold">while</span> <span style="color: #666666">(</span>j <span style="color: #666666">&gt;=</span> <span style="color: #666666">0</span> <span style="color: #666666">&amp;&amp;</span> arr<span style="color: #666666">[</span>j<span style="color: #666666">]</span> <span style="color: #666666">&gt;</span> key<span style="color: #666666">)</span> 
+    <span style="color: #666666">{</span> 
+      arr<span style="color: #666666">[</span>j <span style="color: #666666">+</span> <span style="color: #666666">1]</span> <span style="color: #666666">=</span> arr<span style="color: #666666">[</span>j<span style="color: #666666">];</span> 
+      j <span style="color: #666666">=</span> j <span style="color: #666666">-</span> <span style="color: #666666">1;</span> 
+    <span style="color: #666666">}</span> 
+    
+    <span style="color: #408080; font-style: italic">//key is inserted in the correct position</span>
+    arr<span style="color: #666666">[</span>j <span style="color: #666666">+</span> <span style="color: #666666">1]</span> <span style="color: #666666">=</span> key<span style="color: #666666">;</span> 
+  <span style="color: #666666">}</span> 
+  
+  <span style="color: #408080; font-style: italic">//sequential search</span>
+  <span style="color: #008000; font-weight: bold">for</span> <span style="color: #666666">(</span><span style="color: #B00040">int</span> i <span style="color: #666666">=</span> <span style="color: #666666">0;</span> i <span style="color: #666666">&lt;</span> array<span style="color: #666666">.</span><span style="color: #7D9029">length</span><span style="color: #666666">;</span> i<span style="color: #666666">++)</span>
+  <span style="color: #666666">{</span>
+    <span style="color: #408080; font-style: italic">//if a 3 is found, the index will be returned</span>
+    <span style="color: #008000; font-weight: bold">if</span> <span style="color: #666666">(</span>arr<span style="color: #666666">[</span>i<span style="color: #666666">]</span> <span style="color: #666666">==</span> <span style="color: #666666">3)</span>
+      <span style="color: #008000; font-weight: bold">return</span> i<span style="color: #666666">;</span>
+  <span style="color: #666666">}</span>
+  <span style="color: #408080; font-style: italic">//-1 is returned if no 3 was found</span>
+  <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">-1;</span>
+<span style="color: #666666">}</span>
+</pre></td></tr></table></div>
+           </font>
+    <br><font size = +1>Lines 21 through 29 loop through the now-sorted array, and check each element for a 3. If one is found, the method immediately returns the index at which it was found and exits. If the for loop checks the whole array and doesn't find any threes, it returns -1.</font>
+    <br><br><center><b><u>Search and Sort Tips</u></b></center>
+            <br><center>Avoid IndexOutOfBoundsExceptions by tracing your algorithm, instead of immediately trying to alter your code.
+            <br><center>Use the most efficient sort for each scenario to save time and space.
+            <br>If a search or sort doesn't seem to work, print out every element in the list before and after the algorithm to see what, if anything, was changed.
+       <br><br><div class = "black-box"></div>
+       </center></center></div>
+</html>
